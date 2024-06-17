@@ -9,14 +9,27 @@ export class PlayerController {
     incrementScore(playerName) {
         playerService.incrementScore(playerName)
         console.log('score incrementing')
+        this.drawPlayers()
     }
 
     decrementScore(playerName) {
         playerService.incrementScore(playerName)
         console.log('score decrementing')
+        this.drawPlayers()
     }
 
     drawPlayers() {
-        playerService.drawPlayers()
+        const playerCards = document.getElementById('playerCardArea')
+        let playerCardsHTML = ''
+        const players = AppState.players
+        players.forEach((player) => {
+            playerCardsHTML += `<div class="col-12 col-md-4 d-flex justify-content-between align-items-center border">
+            <p class="mb-0">${player.name}</p>
+            <button onclick="app.PlayerController.decrementScore('${player.name}')">-</button>
+            <p class="mb-0">${player.score}</p>
+            <button onclick="app.PlayerController.incrementScore('${player.name}')">+</button>
+          </div>`
+        });
+        playerCards.innerHTML = playerCardsHTML
     }
 }

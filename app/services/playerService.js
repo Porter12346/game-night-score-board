@@ -15,11 +15,10 @@ class PlayerService {
         const players = AppState.players
         const foundPlayer = players.find((player) => player.name == playerName)
         foundPlayer.score--
+
     }
 
-    drawPlayers() {
-        const playerCards = document.getElementById('playerCardArea')
-    }
+
 }
 
 export const playerService = new PlayerService()
