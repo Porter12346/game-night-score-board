@@ -44,15 +44,15 @@
     <section>
       <div class="container">
         <div class="row" id="playerCardArea">
-          <div class="col-12 col-md-4 d-flex justify-content-between align-items-center border">
-            <p class="mb-0">Porter</p>
-            <button onclick="app.PlayerController.decrementScore('porter')">-</button>
-            <p class="mb-0">0</p>
-            <button onclick="app.PlayerController.incrementScore('porter')">+</button>
-          </div>
+
         </div>
       </div>
     </section>
+
+    <form onsubmit="app.PlayerController.addPlayer()">
+      <input name="playerName" id="playerName" type="text" required>
+      <button type="submit">submit</button>
+    </form>
 
     <section id="router-view">
       <!-- primary viewport -->

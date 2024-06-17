@@ -4,6 +4,7 @@ import { playerService } from "../services/playerService.js"
 export class PlayerController {
     constructor() {
         console.log('player constructor loaded')
+        this.drawPlayers()
     }
 
     incrementScore(playerName) {
@@ -15,6 +16,15 @@ export class PlayerController {
     decrementScore(playerName) {
         playerService.incrementScore(playerName)
         console.log('score decrementing')
+        this.drawPlayers()
+    }
+
+    addPlayer(playerName) {
+        event.preventDefault()
+        const form = event.target
+        // @ts-ignore
+        const userInput = form.playerName.value
+        playerService.addPlayer(`${userInput}`)
         this.drawPlayers()
     }
 
