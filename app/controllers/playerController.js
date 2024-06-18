@@ -35,12 +35,12 @@ export class PlayerController {
         let playerCardsHTML = ''
         const players = AppState.players
         players.forEach((player) => {
-            playerCardsHTML += /*HTML*/ `<div class="col-12 col-md-4 d-flex justify-content-between align-items-center border">
-            <p class="mb-0">${player.name}</p>
+            playerCardsHTML += /*HTML*/ `<div class="col-12 col-md-7 d-flex justify-content-between align-items-center border mb-3 rounded-3">
+            <p class="mb-0 text-capitalize">${player.name}</p>
             <div class="d-flex gap-3 align-items-center">
-            <button onclick="app.PlayerController.decrementScore('${player.name}')">-</button>
+            <button onclick="app.PlayerController.decrementScore('${player.name}')" class="btn btn-light rounded-1">-</button>
             <p class="mb-0">${player.score}</p>
-            <button onclick="app.PlayerController.incrementScore('${player.name}')">+</button>
+            <button onclick="app.PlayerController.incrementScore('${player.name}')" class="btn btn-light rounded-1">+</button>
             </div></div>`
         });
         playerCards.innerHTML = playerCardsHTML

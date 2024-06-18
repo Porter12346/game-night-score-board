@@ -39,22 +39,25 @@
   </header>
 
   <!-- SECTION -->
-  <main>
+  <main class="bg-dark text-light">
 
     <section>
+      <div>
+        <h1 class="fw-bold text-center">GAME NIGHT</h1>
+      </div>
       <div class="container">
-        <div class="row" id="playerCardArea">
+        <div class="row align-items-center justify-content-center fs-3" id="playerCardArea">
 
         </div>
       </div>
     </section>
 
-    <form onsubmit="app.PlayerController.addPlayer()" class="d-flex align-items-center justify-content-center">
+    <form onsubmit="app.PlayerController.addPlayer()" class="d-flex align-items-center justify-content-center mt-5">
       <input name="playerName" id="playerName" type="text" required>
       <button type="submit">submit</button>
     </form>
 
-    <section id="router-view">
+    <section id="router-view" class="bg-dark">
       <!-- primary viewport -->
     </section>
 
