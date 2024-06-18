@@ -14,7 +14,7 @@ export class PlayerController {
     }
 
     decrementScore(playerName) {
-        playerService.incrementScore(playerName)
+        playerService.decrementScore(playerName)
         console.log('score decrementing')
         this.drawPlayers()
     }
@@ -41,8 +41,7 @@ export class PlayerController {
             <button onclick="app.PlayerController.decrementScore('${player.name}')">-</button>
             <p class="mb-0">${player.score}</p>
             <button onclick="app.PlayerController.incrementScore('${player.name}')">+</button>
-            </div>
-          </div>`
+            </div></div>`
         });
         playerCards.innerHTML = playerCardsHTML
     }
